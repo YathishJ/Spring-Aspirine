@@ -1,5 +1,7 @@
 Author information
  - Simply Special
+Spring Boot Version
+ - 1.5.8
 Java Version
  - 1.8.0_144
 Gradle Version
