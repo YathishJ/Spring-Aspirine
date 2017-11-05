@@ -7,6 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class GlobalApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GlobalApplication.class, args);
+		org.springframework.context.ApplicationContext context = SpringApplication.run(GlobalApplication.class, args);
+		HelloWorld helloWorld = (HelloWorld) context.getBean("helloWorld");
+		helloWorld.getHelloWorld();
+
 	}
 }
