@@ -1,6 +1,7 @@
-package com.aspirine.global.abstracts;
+package com.aspirine.global.service;
 
 import com.aspirine.global.interfaces.Calculator;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -11,7 +12,8 @@ import java.util.Objects;
  *
  * @author yathish
  */
-public abstract class MathWorks implements Calculator {
+@Service
+public class MathWorkService implements Calculator {
 
     private static final MathContext mathContext = new MathContext(4);
 
@@ -21,42 +23,35 @@ public abstract class MathWorks implements Calculator {
 
         BigDecimal r = BigDecimal.ZERO;
         for (BigDecimal b : bigDecimals) {
-            r = b.add(b);
+            r = r.add(b);
         }
         return r;
     }
 
-    public BigDecimal subtract(BigDecimal... bigDecimals) {
+    public BigDecimal subtract(BigDecimal valueOne, BigDecimal valueTwo) {
 
-        Objects.requireNonNull(bigDecimals);
+        Objects.requireNonNull(valueOne);
+        Objects.requireNonNull(valueTwo);
 
-        BigDecimal r = BigDecimal.ZERO;
-        for (BigDecimal b : bigDecimals) {
-            r = b.subtract(b);
-        }
-        return r;
+        return valueOne.subtract(valueTwo);
     }
 
     public BigDecimal multiply(BigDecimal... bigDecimals) {
 
         Objects.requireNonNull(bigDecimals);
-
-        BigDecimal r = BigDecimal.ZERO;
+        BigDecimal r = BigDecimal.ONE;
         for (BigDecimal b : bigDecimals) {
-            r = b.multiply(b);
+            r = r.multiply(b);
         }
         return r;
     }
 
-    public BigDecimal divide(BigDecimal... bigDecimals) {
+    public BigDecimal divide(BigDecimal dividend, BigDecimal divisor) {
 
-        Objects.requireNonNull(bigDecimals);
+        Objects.requireNonNull(dividend);
+        Objects.requireNonNull(divisor);
 
-        BigDecimal r = BigDecimal.ZERO;
-        for (BigDecimal b : bigDecimals) {
-            r = b.divide(b, mathContext);
-        }
-        return r;
+        return dividend.divide(divisor, mathContext);
     }
 
 }
