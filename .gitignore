@@ -33,3 +33,5 @@ out/
 
 gradle-wrapper.jar
 gradle-wrapper.properties
+
+.DS_Store

@@ -26,7 +26,7 @@ public class CustomCalculator {
         LOG.info("Addition Check {}", mathWorkService.add(new BigDecimal(10), new BigDecimal(20)));
         LOG.info("Subtract Check {}", mathWorkService.subtract(new BigDecimal(10), new BigDecimal(20)));
         LOG.info("Multiply Check {}", mathWorkService.multiply(new BigDecimal(7), new BigDecimal(9),new BigDecimal(10)));
-        LOG.info("Divide Check {}", mathWorkService.divide(new BigDecimal(30), new BigDecimal(5)));
+        LOG.info("Divide Check {}", mathWorkService.divide(new BigDecimal(30), new BigDecimal(6)));
     }
 
 }
