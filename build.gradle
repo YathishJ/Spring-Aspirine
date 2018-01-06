@@ -24,9 +24,11 @@ repositories {
 
 
 dependencies {
+	compile("org.ektorp:org.ektorp:${ektorpVersion}")
 	compile('org.springframework.boot:spring-boot-starter-jersey')
 	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.security:spring-security-test')
+	compile "commons-io:commons-io:${apacheCommonsIOVersion}"
 }
