@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * This class can find duplicate characters in a String and count the number of occurrences using Java
@@ -17,10 +18,9 @@ public class CustomMathWorker {
 
     public static void main(String[] args) {
 
-        String input = "MANIAC";
-
+        Scanner sc = new Scanner(System.in);
+        String input = sc.next();
         LOG.info("Printing input {}", input);
-
         Map <Character, Integer> charMap = new HashMap <>();
 
         char[] arr = input.toCharArray();
@@ -34,9 +34,10 @@ public class CustomMathWorker {
                 }
             }
         }
-
         LOG.info("Printing output {}", charMap);
 
+        Integer integer = sc.nextInt();
+        LOG.info("Printing integer {}", integer);
     }
 
 }
